@@ -1,2 +1,2 @@
-# FullStack.Team3
-A full stack application by group 3
+# FullStack.Team3 : Karp!e Diem.
+Karp!e Diem is a full stack application by Group 3.

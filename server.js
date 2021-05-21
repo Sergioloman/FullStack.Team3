@@ -6,7 +6,7 @@ const routes = require("./routes/index");
 const sequelize = require("./config/connection");
 //handlebars
 const exphbs  = require('express-handlebars');
-const { mainModule } = require("node:process");
+// const { mainModule } = require("node:process");
 
 const app = express();
 const PORT = process.env.PORT || 3001;

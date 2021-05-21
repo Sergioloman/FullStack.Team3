@@ -1,18 +1,19 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
-class Prompt extends Model {}
+class Score extends Model {}
 
-Prompt.init(
+Score.init(
     {
-        title:{
-            type: DataTypes.STRING,
+        value:{
+            type: DataTypes.INTEGER,
             allowNull: false,
-        }
+        },
+        
     },
     {
         sequelize,
     }
 );
 
-module.exports = Prompt;
+module.exports = Score;

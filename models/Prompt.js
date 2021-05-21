@@ -8,6 +8,9 @@ Prompt.init(
         title:{
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        answer:{
+            type: DataTypes.BOOLEAN,
         }
     },
     {

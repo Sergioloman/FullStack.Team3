@@ -1,5 +1,5 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection.js");
 
 class Prompt extends Model {}
 

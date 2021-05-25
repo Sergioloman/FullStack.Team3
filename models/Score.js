@@ -9,7 +9,7 @@ Score.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-          model: "Promt",
+          model: "Prompt",
           key: "promptId"
       }
     },

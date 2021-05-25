@@ -5,19 +5,19 @@ class Prompt extends Model {}
 
 Prompt.init(
   {
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    answer: {
-      type: DataTypes.BOOLEAN,
-    },
     promptId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    promptScore: {
+      type: DataTypes.INTEGER
+    }
   },
   {
     sequelize,

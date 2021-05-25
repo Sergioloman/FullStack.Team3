@@ -20,7 +20,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull:false,
             validate:{len:[3]}
-        }
+        },
     },
     {
         sequelize,

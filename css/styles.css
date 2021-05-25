@@ -54,11 +54,16 @@ background-color: #0c0c0c;
 
 .columns {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
 .column {
     height: 30%;
+}
+
+.image {
+    width: 400px;
+    height: 200px;
 }
 
 div { 

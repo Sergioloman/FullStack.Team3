@@ -16,6 +16,10 @@ body {
     width: 75%;
 }
 
+.field {
+    border: dashed 2px #018FFE;
+}
+
 #contact {
     float: left;
     padding-right: 5px;
@@ -53,7 +57,7 @@ body {
 }
 
 .hero {
-background-color: #0c0c0c;
+background-color: #000;
 }
 
 .columns {
@@ -63,11 +67,13 @@ background-color: #0c0c0c;
 
 .column {
     height: 30%;
+    
 }
 
 .image {
     width: 400px;
     height: 200px;
+    border: dashed 2px #018FFE;
 }
 
 div { 

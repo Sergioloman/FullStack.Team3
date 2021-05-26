@@ -7,21 +7,27 @@ const strategy = new LocalStrategy(
     usernameField: 'username'
   },
   function(username, password, done) {
-    console.log(password)
-      db.User.findOne({ username: username}, (err, user) => {
-        if (err) {
-          console.log('normal error')
-          return done(err)
-        }
-        if (!user) {
-          console.log("User doesn't exist")
-          return done(null, false, {message: 'Incorrect password' })
-        }
-        else {
-          console.log('Success')
-          return done(null, user)
-        }
-      })
+      db.User.findOne({ username: username }, function (err, user) {
+        if (err) return done(err);
+        if (!user) return done(null, false, { message: 'Incorrect username.' });
+    
+        bcrypt.compare(password, user.password, function (err, res) {
+          if (err) return done(err);
+          if (res === false) return done(null, false, { message: 'Incorrect password.' });
+          
+          return done(null, user);
+        });
+      });
   })
+
+  // function isLoggedIn(req, res, next) {
+  //   if (req.isAuthenticated()) return next();
+  //   res.redirect('/login');
+  // }
+  
+  // function isLoggedOut(req, res, next) {
+  //   if (!req.isAuthenticated()) return next();
+  //   res.redirect('/');
+  // }
 
   module.exports = strategy

@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require("express");
 const routes = require("./routes/index");
-var passport = require('passport');
+const passport = require('passport');
+const bcrypt = require('brcypt');
 
 // import sequelize connection
 const sequelize = require("./config/connection");
+
 //handlebars
 const exphbs  = require('express-handlebars');
 // const { mainModule } = require("node:process");

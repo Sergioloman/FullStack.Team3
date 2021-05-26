@@ -13,7 +13,7 @@ passport.deserializeUser((id, done) => {
     { _id:id },
     'username',
     (err, user) => {
-      console.log ('*** Deserialize userm user:')
+      console.log ('*** DeserializeUser called, user:')
       console.log(user)
       done(null, user)
     })

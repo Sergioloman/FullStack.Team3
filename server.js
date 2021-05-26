@@ -25,6 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+// Passport.js
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(require('./passport'));
+
 // sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {

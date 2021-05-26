@@ -5,24 +5,13 @@ class Score extends Model {}
 
 Score.init(
   {
-    value: {
+    score: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-          model: "Prompt",
-          key: "promptId"
-      }
-    },
-    scoreId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+        },
     playerId:{
         type: DataTypes.INTEGER,
         references:{
-            model:"User",
+            model:"Users",
             key:"userId"
         }
     }

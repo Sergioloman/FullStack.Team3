@@ -1,7 +1,7 @@
 const userSeeds = require('./users-seeds');
 const promptSeeds = require('./prompt-seeds')
 const scoreSeeds = require('./score-seeds');
-const { sequelize } = require('../models/Score');
+const { sequelize } = require('../models');
 
 const allSeeds = async() => {
     await sequelize.sync({force: true})

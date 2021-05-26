@@ -21,6 +21,7 @@ User.init(
             allowNull:false,
             validate:{len:[3]}
         },
+      
     },
     {
         sequelize,

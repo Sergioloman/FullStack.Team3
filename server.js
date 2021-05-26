@@ -1,7 +1,6 @@
 const express = require("express");
 const routes = require("./routes/index");
 
-
 // import sequelize connection
 const sequelize = require("./config/connection");
 //handlebars
@@ -14,8 +13,6 @@ const PORT = process.env.PORT || 3001;
 //more handlebars
 app.engine('.hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', '.hbs');
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

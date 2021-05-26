@@ -3,19 +3,18 @@ const {Score} = require('../models')
 
 const scoreData = [
     {
-        value: 10,
-        scoreId:1,
-        playerId:null
+        score: 10,
+        
+        playerId:1
     },
     {
-        value: 20,
-        scoreId:2,
-        playerId:null
+        score: 20,
+        
+        playerId:2
     },
     {
-        value: 30,
-        scoreId:3,
-        playerId:null
+        score: 30,
+        playerId:3
     }
 
 

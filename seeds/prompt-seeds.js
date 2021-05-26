@@ -9,7 +9,7 @@ const promptData = [
     },
     {
         promptId:2,
-        title:"Did you ride a bicicle today?",
+        title:"Did you ride a bicycle today?",
         promptScore: 20,
     },
     {

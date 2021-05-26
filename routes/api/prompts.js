@@ -1,18 +1,21 @@
 const router = require('express').Router()
-
 const {Prompt}= require('../../models')
 
+//get all prompts
 router.get("/",(req, res)=>{
-    Prompt.findAll({
-            //return all prompts in database
-    }).then(data => res.json(data))
+    Prompt.findAll()
+    //.then(data => res.render("prompts",{data}))
+    .then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 });
 
 // return specific prompt
-
-// returning x prompt will allow us to access their data and modify it.
-
-// we are going to fetch the prompt x data trough our game logic. 
+router.get("/:id",(req, res)=>{
+    Prompt.findOne(
+        {where: {promptId:req.params.id}}
+    )//.then(data=> res.render("onePrompt",{data}))
+    .then(data=> res.json(data))
+    .catch(err => res.status(500).json(err))
+})
 
 module.exports = router;

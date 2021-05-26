@@ -1,5 +1,7 @@
 const LocalStrategy = require('./localStrategy')
 const db = require('../models')
+const passport = require('passport');
+const bcrypt = require('bcrypt');
 
 passport.serializeUser((user, done) => {
   console.log('*** serializeUser called, user: ')
@@ -21,4 +23,4 @@ passport.deserializeUser((id, done) => {
 
 passport.use(LocalStrategy)
 
-module.exports = passport
+module.exports = passport;

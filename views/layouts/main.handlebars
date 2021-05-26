@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/contact.css">
 
 
@@ -24,9 +24,23 @@
                     <a href="/contact">CONTACT</a>
                 </div>
                 <div id="banner">
-                    <img src="/public/images/2ndheader.png" alt="Karp!E Diem Photo">
+                    <img src="/images/2ndheader.png" alt="Karp!E Diem Photo">
                 </div>
         </div>
+      <div>
+      <h3 class="nav-item">
+                {{#if loggedIn}}
+                <a class="nav-link" href="/dashboard">My Dashboard</a>
+
+            </h3>
+            <nav class="nav-link">
+                <button id="logout" class="nav-link active">LogOUT</button>
+                {{else}}
+                <a class="nav-link navbar-center" href="/login">LogIN</a>
+                {{/if}}
+            </nav>
+        </div>
+      </section>
     <main class="main-body">
           {{{body}}}
     </main>

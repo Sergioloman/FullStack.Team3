@@ -1,5 +1,6 @@
 const db = require('../models')
 const LocalStrategy = require('passport-local').Strategy
+const bcrypt = require('bcrypt');
 
 const strategy = new LocalStrategy(
 

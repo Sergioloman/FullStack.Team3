@@ -11,12 +11,13 @@
 // game logic
 function addKarp(){
     //  returns the sum of value of prompt + current userScore.
-
-    const userScore = fetch('/').then( data).then(data.user.userscore)
+    const userScore = fetch('/user/score/:id').then(console.log(data)).then(data.score)
    
-    const promptvalue =  fetch('/').then( data).then(data.prompt.promptscore)
+    const promptScore =  fetch('/prompt/score/:id').then(console.log(data)).then(data.score)
 
-    finalScore = userScore + promptvalue
+    // make another api route to update the current value of player score
+    finalScore = userScore + promptScore
+
     return finalScore;
 }
 

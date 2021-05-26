@@ -27,5 +27,5 @@ User.init(
         sequelize,
     }
 );
-
+//we are missing hooks and a function that refers to password.
 module.exports = User;

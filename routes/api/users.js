@@ -15,10 +15,19 @@ router.get("/",(req, res)=>{
 router.get("/:id",(req, res)=>{
     User.findOne(
     {
-        where: req.params.id,
+        where: {userId: req.params.id},
         attributes:{include: [Score.playerId]}
     }
     ).then(data=> res.render("oneUser",{data}))
+    .catch(err => res.status(500).json(err))
+})
+
+// delete specific user
+
+router.delete("/:id",(req, res)=>{
+    User.destroy({
+        where: {userId: req.params.id}
+    }).then(data=>res.json(data))
     .catch(err => res.status(500).json(err))
 })
 

@@ -12,7 +12,4 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-//we want users to see previous scores
-
-//render handlebars
 module.exports = router;

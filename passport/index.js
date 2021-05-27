@@ -1,4 +1,5 @@
-const LocalStrategy = require('./localStrategy')
+const signupStrat = require('./signupStrat')
+const loginStrat = require('./loginStrat')
 const db = require('../models')
 const passport = require('passport');
 const bcrypt = require('bcrypt');
@@ -21,6 +22,6 @@ passport.deserializeUser((id, done) => {
     })
 })
 
-passport.use(LocalStrategy)
-
+passport.use("signup" ,signupStrat)
+passport.use("login" ,loginStrat)
 module.exports = passport;

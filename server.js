@@ -9,7 +9,8 @@ const bcrypt = require('bcrypt');
 
 // //require('./routes/routes')(app);
 
-//
+// Passport.js
+
 
 // import sequelize connection
 const sequelize = require("./config/connection");
@@ -23,7 +24,8 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+app.use(passport.initialize());
+app.use(passport.session());
 //more handlebars
 app.engine('handlebars', exphbs({
   layoutsDir: __dirname + '/views/layouts',
@@ -41,9 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// Passport.js
-app.use(passport.initialize());
-app.use(passport.session());
+
 // app.use(require('./passport'));
 
 sequelize.sync({ force: false }).then(() => {

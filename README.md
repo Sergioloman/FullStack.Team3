@@ -8,9 +8,13 @@
 - Karp values will be determinded by how "cool" or "interesting" these activities are.
 
 ## Karp Values are as follows
-- 10 interesting
-- 20 cool
-- 30 awesome
+- 10 points for interesting
+- 20 points cool
+- 30 points for awesome
 
 # Questions
 ## Contact the Creators
+Sergio Torres: [sergioloman](https://github.com/Sergioloman)
+Anh Nguyen: [kwinanh](https://github.com/kwinahn)
+Emily Pozzi: [emilyepozzi](https://github.com/emilyepozzi)
+Ritchie Ortiz: [xRitchie91](https://www.github.com/xRitchie91)

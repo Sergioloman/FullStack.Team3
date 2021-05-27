@@ -1,25 +1,51 @@
+const path = require('path');
 const express = require("express");
-const routes = require("./routes/index");
+const session	= require('express-session');
+const routes = require("./routes");
+const passport = require('passport');
+const localStrategy	= require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
+
+
+// //require('./routes/routes')(app);
+
+// Passport.js
+
 
 // import sequelize connection
 const sequelize = require("./config/connection");
+
 //handlebars
 const exphbs  = require('express-handlebars');
 // const { mainModule } = require("node:process");
 
+require('dotenv').config();
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+app.use(passport.initialize());
+app.use(passport.session());
 //more handlebars
-app.engine('.hbs', exphbs({extname: '.hbs'}));
-app.set('view engine', '.hbs');
-
+app.engine('handlebars', exphbs({
+  layoutsDir: __dirname + '/views/layouts',
+  }));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'handlebars');
+app.use(session({
+	secret: "secret",
+	resave: false,
+	saveUninitialized: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// sync sequelize models to the database, then turn on the server
+
+// app.use(require('./passport'));
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);

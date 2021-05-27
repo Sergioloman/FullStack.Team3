@@ -9,10 +9,8 @@ router.get('/', (req, res) => {
     })
     .then(dbPrompt => {
       //const prompts = dbPrompt.map(prompts.get({ plain: true}));
-
-      res.render('homepage', dbPrompt
-        loggedIn: req.session.loggedIn
-      })
+      res.render('homepage', dbPrompt)
+        {loggedIn: req.session.loggedIn}
     })
     .catch(err => {
       console.log(err);

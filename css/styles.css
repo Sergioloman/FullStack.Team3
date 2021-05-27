@@ -4,6 +4,7 @@ body {
     padding: 0;
     font-family: monospace;
     color: #fff;
+    background-color: #000;
 }
 
 .title {
@@ -18,6 +19,17 @@ body {
 
 .field {
     border: dashed 2px #018FFE;
+}
+
+.karp {
+    border: dashed 2px #018FFE;
+    background-color: #000;
+    text-align: center;
+    margin: auto;
+}
+
+p {
+    text-decoration: underline;
 }
 
 #contact {
@@ -58,6 +70,7 @@ body {
 
 .hero {
 background-color: #000;
+text-align: center;
 }
 
 .columns {

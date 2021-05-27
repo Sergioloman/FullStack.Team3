@@ -1,0 +1,97 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    color: #fff;
+    background-color: #000;
+}
+
+.title {
+    font-family: monospace;
+}
+
+#container {
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 75%;
+}
+
+.field {
+    border: dashed 2px #018FFE;
+}
+
+.karp {
+    border: dashed 2px #018FFE;
+    background-color: #000;
+    text-align: center;
+    margin: auto;
+}
+
+p {
+    text-decoration: underline;
+}
+
+#contact {
+    float: left;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-left: 6.25%;
+    margin-top: 5px;
+    border: dashed 2px #018FFE;
+}
+
+#about {
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: 6.25%;
+    margin-top: 5px;
+    border: dashed 2px #018FFE;
+}
+
+#banner {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 600px;
+}
+
+#content {
+    width: 100%;
+    margin-top: 50px;
+}
+
+#fish {
+    width: 200px;
+    height: 100px;
+    border: dashed 2px #018FFE;
+}
+
+.hero {
+background-color: #000;
+}
+
+.columns {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.column {
+    height: 30%;
+    
+}
+
+.image {
+    width: 400px;
+    height: 200px;
+    border: dashed 2px #018FFE;
+}
+
+div { 
+    display: block;
+}
+
+.submit {
+    border: dashed 2px #018FFE;
+}

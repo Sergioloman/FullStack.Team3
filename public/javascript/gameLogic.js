@@ -8,7 +8,7 @@
 
 // <button id="nobtn" type="button">Nope :( </button>
 
-// game logic
+
 function addKarp(){
     //  returns the sum of value of prompt + current userScore.
     const userScore = fetch('/user/score/:id').then(console.log(data)).then(data.score)

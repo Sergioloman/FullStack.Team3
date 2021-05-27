@@ -5,13 +5,12 @@ const {Prompt, User, Score } = require('../models');
 
 router.get('/', (req, res) => {
   Prompt.findAll({
-    attributes: [
-      'title']
+    attributes: ['title']
     })
     .then(dbPrompt => {
       //const prompts = dbPrompt.map(prompts.get({ plain: true}));
 
-      res.render('homepage', {
+      res.render('homepage', dbPrompt
         loggedIn: req.session.loggedIn
       })
     })

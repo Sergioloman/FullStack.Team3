@@ -5,7 +5,8 @@ const bcrypt = require('bcrypt');
 const strategy = new LocalStrategy(
 
   {
-    usernameField: 'username'
+    usernameField: 'username', 
+    passwordField: 'password'
   },
   function(username, password, done) {
       db.User.findOne({ username: username }, function (err, user) {

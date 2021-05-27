@@ -7,7 +7,7 @@ router.get("/",(req, res)=>{
         {attributes:{include: [Score.playerId, User.username]
         }}
     )
-    .then(data => res.render("Scores",{data}))
+    .then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 });
 
@@ -17,7 +17,7 @@ router.get("/:id",(req, res)=>{
     {
         where: {userId:req.params.id},
     } 
-    ).then(data=> res.render("oneScore",{data}))
+    ).then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 })
 
@@ -28,7 +28,7 @@ router.get("/:id",(req, res)=>{
     {
         where: {userId:req.params.id},
     } 
-    ).then(data=> res.render("onePrompt",{data}))
+    ).then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 })
 

@@ -42,6 +42,15 @@ p {
 }
 
 #about {
+    float: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: 6.25%;
+    margin-top: 5px;
+    border: dashed 2px #018FFE;
+}
+
+#login #logout{
     float: right;
     padding-right: 5px;
     padding-left: 5px;

@@ -32,6 +32,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+
+router.get('/contact', (req, res) => {
+  res.render('contact');
+})
+
+router.get('/about', (req, res) => {
+  res.render('about');
+})
 //we want users to see previous scores
 
 //render handlebars

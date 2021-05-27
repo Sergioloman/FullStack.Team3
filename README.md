@@ -14,7 +14,7 @@
 
 # Questions
 ## Contact the Creators
-Sergio Torres: [sergioloman](https://github.com/Sergioloman)
-Anh Nguyen: [kwinanh](https://github.com/kwinahn)
-Emily Pozzi: [emilyepozzi](https://github.com/emilyepozzi)
-Ritchie Ortiz: [xRitchie91](https://www.github.com/xRitchie91)
+[Sergio Torres](https://github.com/Sergioloman)
+[Anh Nguyen](https://github.com/kwinahn)
+[Emily Pozzi](https://github.com/emilyepozzi)
+[Ritchie Ortiz](https://www.github.com/xRitchie91)

@@ -14,7 +14,7 @@
     <title>Karp!E Diem</title>
 </head>
 <body>
-    <section class="hero is-fullheight">
+    <section class="hero">
         <!-- Hero head: will stick at the top -->
         <div id="container">
                 <div id="about">
@@ -26,20 +26,18 @@
                 <div id="banner">
                     <img src="/images/2ndheader.png" alt="Karp!E Diem Photo">
                 </div>
+                <div id="login">
+                  {{#if loggedIn}}
+                  <a href="/homepage">Homepage</a>
+                  <button id="logout" class="button is-primary">LOG-OUT</button>
+                  {{else}}
+                  <button class="button is-black">
+                    <a href="/login">LOG-IN</a></button>
+                  {{/if}}
+                </div>
+                
         </div>
-      <div>
-      <h3 class="nav-item">
-                {{#if loggedIn}}
-                <a class="nav-link" href="/dashboard">My Dashboard</a>
-
-            </h3>
-            <nav class="nav-link">
-                <button id="logout" class="nav-link active">LogOUT</button>
-                {{else}}
-                <a class="nav-link navbar-center" href="/login">LogIN</a>
-                {{/if}}
-            </nav>
-        </div>
+    
       </section>
     <main class="main-body">
           {{{body}}}

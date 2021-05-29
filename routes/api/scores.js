@@ -41,7 +41,7 @@ router.get("/:id",(req, res)=>{
 //update user single user score
 
 router.put("/:id",(req,res)=>{
-    console.log(req.body, req.params.id,'this is the put ')
+    console.log(req.body, req.params.id,'this is the new score! ')
     Score.update(
     {
         score: req.body.score

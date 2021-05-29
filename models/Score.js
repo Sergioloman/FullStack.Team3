@@ -8,13 +8,6 @@ Score.init(
     score: {
       type: DataTypes.INTEGER,
         },
-    // playerId:{
-    //     type: DataTypes.INTEGER,
-    //     // references:{
-    //     //     model:"Users",
-    //     //     key:"userId"
-    //     // }
-    // }
   },
   {
     sequelize,

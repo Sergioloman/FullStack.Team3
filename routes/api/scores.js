@@ -5,7 +5,7 @@ const {User, Score, Prompt }= require('../../models')
 router.get("/",(req, res)=>{
     Score.findAll(
         {
-            attributes: ['score','playerId'],
+            attributes: ['score','userId'],
             //how can i show the name of the user here? why is my answer 'null'?
             include: [
                 { 
@@ -24,7 +24,7 @@ router.get("/",(req, res)=>{
 router.get("/:id",(req, res)=>{
     Score.findOne(
     {
-        where: {playerId:req.params.id},
+        where: {userId:req.params.id},
         include: [
             { 
                 model: User,

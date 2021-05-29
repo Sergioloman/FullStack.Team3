@@ -5,12 +5,12 @@ const {Prompt, User, Score } = require('../models');
 
 router.get('/', (req, res) => {
   Prompt.findAll({
-    attributes: ['title']
+    attributes: ['title','promptScore']
     })
     .then(data => {
-      const dbscores = data.map((score) => score.get({ plain: true }));
-      console.log(dbscores, "/////scores!///////");
-      res.render("play", { dbscores });
+      const dbprompt = data.map((score) => score.get({ plain: true }));
+      console.log(dbprompt, "/////prompt!///////");
+      res.render("play", { dbprompt });
     })
     .catch(err => {
       console.log(err);

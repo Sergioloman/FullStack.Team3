@@ -5,7 +5,9 @@ const { Prompt, User, Score } = require("../models");
 //how can i introduce the username corresponding to the id as well???
 router.get('/', (req, res) => {
   Score.findAll({
-    attributes: ['score', 'playerId']
+    attributes: ['score'],
+    include: {model: User,
+              attributes:['username']}
     })
     .then((data) => {
             const dbscores = data.map((score) => score.get({ plain: true }));

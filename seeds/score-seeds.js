@@ -5,16 +5,16 @@ const scoreData = [
     {
         score: 10,
         
-        playerId:1
+        userId:1
     },
     {
         score: 20,
         
-        playerId:2
+        userId:2
     },
     {
         score: 30,
-        playerId:3
+        userId:3
     }
 
 

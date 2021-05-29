@@ -3,10 +3,7 @@ const {User, Score, Prompt }= require('../../models');
 
 //get all Users
 router.get("/",(req, res)=>{
-    User.findAll(
-        {attributes:{include: [Score.playerId],
-        exclude:[User.password]}}
-    )
+    User.findAll()
     .then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 });
@@ -15,8 +12,7 @@ router.get("/",(req, res)=>{
 router.get("/:id",(req, res)=>{
     User.findOne(
     {
-        where: {userId: req.params.id},
-        attributes:{include: [Score.playerId]}
+        where: {Id:req.params.id}
     }
     ).then(data=> res.json(data))
     .catch(err => res.status(500).json(err))

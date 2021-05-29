@@ -4,11 +4,14 @@
   </div>
 
   <div class="card-content">
+     
+    <ul> 
       {{#each dbscores}}
-    <li>
-      {{score}}// {{User.username}}//
-    </li>
+      <li>
+        {{score}} - {{User.username}}
+      </li>
       {{/each}}
+    </ul>
   </div>
 
 </section>

@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
             res.render("scores", { dbscores });
           })
           .catch((err) => res.status(500).json(err));
-  
+          
 })
+
 
 module.exports = router;

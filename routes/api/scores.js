@@ -40,14 +40,14 @@ router.get("/:id",(req, res)=>{
 //**this could use some work...*/
 //update user single user score
 
-router.put("/:id",(req, res)=>{
-    Score.update({
+router.put("/:id",(req,res)=>{
+    console.log(req.body, req.params.id,'this is the put ')
+    Score.update(
+    {
         score: req.body.score
     },
     {
-        where: {
-            id: req.params.id
-          }
+        where: {userId: req.params.id}
     }
 
     ).then(data=>res.json(data))

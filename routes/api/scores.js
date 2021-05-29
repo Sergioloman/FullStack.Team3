@@ -4,8 +4,12 @@ const {User, Score, Prompt }= require('../../models')
 //get all Scores
 router.get("/",(req, res)=>{
     Score.findAll(
-        {attributes:{include: [Score.playerId, User.username]
-        }}
+        {
+            //attributes:{include: [Score.playerId, User.username],
+            //include: [Score.playerId, User.username]
+            attributes: ['score','playerId'],
+            //include: [{model: User,atributes:['username']}]
+        }
     )
     .then(data=> res.json(data))
     .catch(err => res.status(500).json(err))

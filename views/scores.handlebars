@@ -1,14 +1,14 @@
 <section>
   <div class="card-title">
-  <h2>HighScore</h2>
+  <h2>HighScores</h2>
   </div>
 
   <div class="card-content">
+      {{#each dbscores}}
     <li>
-      {{#each}}
-      {{data.score}}
-      {{/each}}
+      {{score}}, {{playerId}}
     </li>
+      {{/each}}
   </div>
 
 </section>

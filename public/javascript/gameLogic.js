@@ -21,4 +21,30 @@ function addKarp(){
     return finalScore;
 }
 
-document.querySelector('#yesbtn').addEventListener("click", addKarp())
+
+
+function clickHandler(){
+    
+        const index = [1,2,3,4,5,6,7,8,9,10]
+        const randomPromptId =  index[Math.floor(Math.random()*index.length)]
+        console.log(parseInt(randomPromptId))
+        const response = fetch('/api/prompt/'+ randomPromptId)
+        .then(data =>data.json())
+        .then(response=>{
+            console.log(response.title)//this is good to go!
+
+            let result = response.title
+            console.log(result)//this works too!
+
+            let randomPromptContainer = document.querySelector("#randomPrompt");
+         
+            randomPromptContainer.append(result);
+            
+        })
+
+}
+
+clickHandler()
+
+document.querySelector('#yesbtn').addEventListener("click", console.log("Awesome! get some karps!"))
+document.querySelector('#nobtn').addEventListener("click", console.log("No karps for you!"))

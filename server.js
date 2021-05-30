@@ -77,11 +77,11 @@ function loggedOut(req, res, next) {
 }
 
 // ROUTES
-app.get('/', loggedIn, (req, res) => {
-	res.render("homepage", { title: "Home" });
-});
+// app.get('/', loggedIn, (req, res) => {
+// 	res.render("homepage", { title: "Home" });
+// });
 
-app.get('/about', (req, res) => {
+app.get('/', (req, res) => {
 	res.render("homepage", { title: "About" });
 });
 

@@ -14,35 +14,29 @@
     <title>Karp!E Diem</title>
 </head>
 <body>
-    <section class="hero">
+    <section class="hero is-fullheight">
         <!-- Hero head: will stick at the top -->
         <div id="container">
-<!--                <div id="about">
-                    <a href="/about">ABOUT</a>
-                </div> -->
-<!--                <div id="contact">
-                    <a href="/contact">CONTACT</a>
-                </div> -->
                 <div id="banner">
                     <a href="/"><img src="/images/2ndheader.png" alt="Karp!E Diem Photo"></a>
                 </div>
                 <div id="login">
                   {{#if loggedIn}}
                   <a href="/homepage">Homepage</a>
-                  <button id="logout" class="button is-primary">LOG-OUT</button>
                   {{else}}
                   <button class="button is-black">
                     <a href="/login">LOG-IN</a></button>
-                  {{/if}}
+                  {{/if play}}
+                    <button class="button is-black">
+                    <a href="/logout">LOG-OUT</a></button>
                 </div>
                 
         </div>
     
-      </section>
-    <main class="main-body">
+    <section class="main-body">
           {{{body}}}
-    </main>
-  
+    </section>
+  </section>
   {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}

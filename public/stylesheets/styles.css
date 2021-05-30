@@ -33,7 +33,7 @@ p {
 }
 
 #contact {
-    float: left;
+    float: right;
     padding-right: 5px;
     padding-left: 5px;
     margin-left: 6.25%;
@@ -42,9 +42,8 @@ p {
 }
 
 #about {
-    float: center;
-    padding-right: 5px;
-    padding-left: 5px;
+    float: right;
+    padding: 10px;
     margin-right: 6.25%;
     margin-top: 5px;
     border: dashed 2px #018FFE;

@@ -5,20 +5,18 @@ const routes = require("./routes");
 const passport = require('passport');
 const localStrategy	= require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-
+const bodyParser = require('body-parser')
 // import sequelize connection
 const sequelize = require("./config/connection");
 
 //handlebars
 const exphbs  = require('express-handlebars');
-// const { mainModule } = require("node:process");
-
 require('dotenv').config();
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+app.use(passport.initialize());
+app.use(passport.session());
 //more handlebars
 app.engine('handlebars', exphbs({
   layoutsDir: __dirname + '/views/layouts',
@@ -31,11 +29,17 @@ app.use(session({
 	saveUninitialized: true
 }));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(bodyParser.urlencoded())
+app.use(bodyParser.json())
 app.use(routes);
+app.post('/test', (req, res)=>{
+  console.log(req.body)
+  res.json(req.body)
+})
 
+<<<<<<< HEAD
 // Passport.js
 app.use(passport.initialize());
 app.use(passport.session());
@@ -133,6 +137,8 @@ app.get('/setup', async (req, res) => {
 /// ==== sample code ended =====
 
 // sync sequelize models to the database, then turn on the server
+=======
+>>>>>>> 6c1791ab6e5c07200e4c96589a4abd0c87db8373
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);

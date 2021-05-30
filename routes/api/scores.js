@@ -4,44 +4,50 @@ const {User, Score, Prompt }= require('../../models')
 //get all Scores
 router.get("/",(req, res)=>{
     Score.findAll(
-        {attributes:{include: [Score.playerId, User.username]
-        }}
+        {
+            attributes: ['score','userId'],
+            //how can i show the name of the user here? why is my answer 'null'?
+            include: [
+                { 
+                    model: User,
+                    attributes: ['username']
+                },
+                
+            ]
+        }
     )
-    .then(data => res.render("Scores",{data}))
+    .then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 });
 
-// return specific User
+// return specific User score by id
 router.get("/:id",(req, res)=>{
-    User.findOne(
+    Score.findOne(
     {
         where: {userId:req.params.id},
+        include: [
+            { 
+                model: User,
+                attributes: ['username']
+            },
+            
+        ]
     } 
-    ).then(data=> res.render("oneScore",{data}))
+    ).then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 })
 
-
-//a single prompt score
-router.get("/:id",(req, res)=>{
-    Prompt.findOne(
-    {
-        where: {userId:req.params.id},
-    } 
-    ).then(data=> res.render("onePrompt",{data}))
-    .catch(err => res.status(500).json(err))
-})
-
+//**this could use some work...*/
 //update user single user score
 
-router.put("/:id",(req, res)=>{
-    Score.update({
+router.put("/:id",(req,res)=>{
+    console.log(req.body, req.params.id,'this is the new score! ')
+    Score.update(
+    {
         score: req.body.score
     },
     {
-        where: {
-            id: req.params.id
-          }
+        where: {userId: req.params.id}
     }
 
     ).then(data=>res.json(data))

@@ -1,0 +1,17 @@
+<section>
+  <div class="card-title">
+  <h2>HighScores</h2>
+  </div>
+
+  <div class="card-content">
+     
+    <ul> 
+      {{#each dbscores}}
+      <li>
+        {{score}} - {{User.username}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+
+</section>

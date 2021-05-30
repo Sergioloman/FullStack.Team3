@@ -21,6 +21,7 @@ async function randomizer() {
       let result = response.title;
       console.log(response);
       let randomPromptContainer = document.querySelector("#randomPrompt");
+      randomPromptContainer.innerHTML=''
       randomPromptContainer.append(result);
 
       return result;
@@ -35,12 +36,11 @@ async function randomizer() {
     });
   console.log("rando prompt's score: " + pScore);
 }
-
 //  returns the sum of value of prompt + current userScore.
 async function addKarp(e) {
   e.preventDefault();
 
-  const Id = 2; //this is our test//this should be the id of the user once logged in!
+  const Id = 1; //this is our test//this should be the id of the user once logged in!
 
   //get current user's information
   const iduser = await fetch("api/users/" + Id)
@@ -97,8 +97,14 @@ function goBack(e) {
   console.log("take me back to homepage");
   document.location.replace("/");
 }
-
+function playAgain(e) {
+    e.preventDefault();
+    console.log("play again!");
+    document.location.replace("/play");
+  }
+  
 randomizer();
 
 document.querySelector("#yesbtn").addEventListener("click", addKarp);
+document.querySelector("#replaybtn").addEventListener("click", randomizer);
 document.querySelector("#nobtn").addEventListener("click", goBack);

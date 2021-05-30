@@ -19,7 +19,7 @@ const signInUser = (req, username, password, done) => {
             });
         }
 
-        return done(null, user.get());
+        return done(null, user.get(),'welcome back user!');
     }).catch((err) => {
         console.error("Error in signin user", err);
         return done(null, false, {

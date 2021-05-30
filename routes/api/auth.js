@@ -4,12 +4,12 @@ const passport  = require('../../passport/index')
 
 
 router.post('/login', passport.authenticate('login', {
-    successRedirect: '/dashboard',
+    successRedirect: '/play',
     failureRedirect: '/signup'
 }));
 
 router.post('/signup', passport.authenticate('signup', {
-    successRedirect: '/dashboard',
+    successRedirect: '/play',
     failureRedirect: '/signup'
 }));
 

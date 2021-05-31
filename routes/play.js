@@ -16,6 +16,49 @@ router.get('/', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+
+
+    
+  User.findOne({
+        attributes: ['username','id'],
+        where: {username: req.user.username}
+  })
+  .then(data=> {
+    res.json(data)
+    console.log(data,"XXXXXXXX")
+    if (req.user){
+    res.render('play',{data})
+  }})
+  .catch(err => res.status(500).json(err))
       
   })
-module.exports = router;
+
+// as soon as users get into the page, fetch their info
+// router.get('/', (req,res)=>{
+//     User.findOne(
+//         {where: {username: req.user.username}}
+//     )
+//     .then(data=> {
+//       res.json(data)
+//       console.log(data,"XXXXXXXX")
+//       if (req.user){
+//       res.render('play',{data})
+//     }})
+//     .catch(err => res.status(500).json(err))
+// })
+  
+  //return specific User///is this even necessary? play should be only for the render of play
+  router.get("/:id",(req, res)=>{
+    User.findOne(
+    {
+        where: {id:req.params.id}
+    }
+    ).then(data=> {
+      res.json(data)
+    })
+    .catch(err => res.status(500).json(err))
+  })
+  
+
+
+  module.exports = router;

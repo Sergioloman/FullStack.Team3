@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      // document.location.replace("/homepage");
+      document.location.replace("/play");
     } else {
       alert(response.statusText);
     }

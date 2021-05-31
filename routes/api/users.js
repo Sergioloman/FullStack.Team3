@@ -12,11 +12,12 @@ router.get("/",(req, res)=>{
 router.get("/:id",(req, res)=>{
     User.findOne(
     {
-        where: {Id:req.params.id}
+        where: {id:req.params.id}
     }
     ).then(data=> res.json(data))
     .catch(err => res.status(500).json(err))
 })
+
 
 // delete specific user
 

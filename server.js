@@ -15,19 +15,22 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 app.use(passport.initialize());
 app.use(passport.session());
 //more handlebars
 app.engine('handlebars', exphbs({
   layoutsDir: __dirname + '/views/layouts',
-  }));
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 app.use(session({
-	secret: "secret",
+  secret: "secret",
 	resave: false,
 	saveUninitialized: true
 }));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,3 +47,5 @@ sequelize.sync({ force: false }).then(() => {
     console.log(`App listening on port ${PORT}!`);
   });
 });
+
+//DO NOT TOUCH

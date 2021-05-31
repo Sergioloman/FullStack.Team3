@@ -3,5 +3,7 @@ node_modules/
 node_modules
 package-lock.json
 .DS_Store
+JAWSDB_URL=mysql://so6ftd9pp5vk6czo:jmvz9b86xqpa7jzi@wcwimj6zu5aaddlj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/yaq2cth2kflmvry8
+
 
 

@@ -22,10 +22,14 @@ const strategy = new LocalStrategy(
                 message: "incorrect password!"
             })
         }
+
         return done(null, user.get())
 
 
-    }) 
+    })
+    .then((returningUser)=>{
+      console.log(returningUser, '////////Welcome Back!///////')
+    })
         
      
   })

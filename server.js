@@ -5,22 +5,13 @@ const routes = require("./routes");
 const passport = require('passport');
 const localStrategy	= require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-
-
-// //require('./routes/routes')(app);
-
-// Passport.js
-
-
+const bodyParser = require('body-parser')
 // import sequelize connection
 const sequelize = require("./config/connection");
 
 //handlebars
 const exphbs  = require('express-handlebars');
-// const { mainModule } = require("node:process");
-
 require('dotenv').config();
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -40,11 +31,13 @@ app.use(session({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(bodyParser.urlencoded())
+app.use(bodyParser.json())
 app.use(routes);
-
-
-// app.use(require('./passport'));
+app.post('/test', (req, res)=>{
+  console.log(req.body)
+  res.json(req.body)
+})
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {

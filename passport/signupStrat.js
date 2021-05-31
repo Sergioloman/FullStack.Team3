@@ -23,7 +23,7 @@ const strategy = new LocalStrategy(
           username: username,
           password: userPassword,
         }).then((newUser) => {
-          console.log(newUser, "are we there ye?");
+          console.log(newUser, "Welcome new user!");
           if (!newUser) {
             return done(null, false);
           } else {

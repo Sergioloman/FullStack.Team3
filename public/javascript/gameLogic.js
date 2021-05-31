@@ -1,4 +1,3 @@
-//generate a random prompt
 var randomIndex;
 var rPrompt;
 var pScore; 
